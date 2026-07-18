@@ -1,0 +1,9 @@
+{
+  "extends": [
+    "github:rcwbr/release-it-docker/file-bumper#0.8.1"
+  ],
+  "github": {
+    "assets": "dive.json",
+    "release": true
+  }
+}
