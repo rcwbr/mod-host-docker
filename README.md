@@ -1,4 +1,4 @@
-# mod-host-docker<a name="new_project"></a>
+# mod-host-docker<a name="mod-host-docker"></a>
 
 [![Dive Docker efficiency](<https://img.shields.io/badge/dynamic/regex?label=dive%20efficiency&logo=docker&logoColor=white&style=flat-square&url=https%3A%2F%2Fgithub.com%2Frcwbr%2Fmod-host-docker%2Freleases%2Flatest%2Fdownload%2Fdive.json&search=%22efficiencyScore%22%3A%20%5B0-9%5D%2B.(%5B0-9%5D%7B2%7D)(%5B0-9%5D%7B2%7D)&replace=%241.%242%25>)](https://github.com/wagoodman/dive)
 [![GitHub Release](https://img.shields.io/github/v/release/rcwbr/mod-host-docker?logo=semver&style=flat-square)](https://github.com/rcwbr/mod-host-docker/releases/latest)
@@ -11,7 +11,7 @@ PLACEHOLDER: Project description.
 
 <!-- mdformat-toc start --slug=github --maxlevel=6 --minlevel=1 -->
 
-- [mod-host-docker](#new_project)
+- [mod-host-docker](#mod-host-docker)
   - [Overview](#overview)
   - [Usage](#usage)
   - [Contributing](#contributing)
