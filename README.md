@@ -1,4 +1,4 @@
-# mod-host-docker<a name="new_project"></a>
+# mod-host-docker<a name="mod-host-docker"></a>
 
 [![Dive Docker efficiency](<https://img.shields.io/badge/dynamic/regex?label=dive%20efficiency&logo=docker&logoColor=white&style=flat-square&url=https%3A%2F%2Fgithub.com%2Frcwbr%2Fmod-host-docker%2Freleases%2Flatest%2Fdownload%2Fdive.json&search=%22efficiencyScore%22%3A%20%5B0-9%5D%2B.(%5B0-9%5D%7B2%7D)(%5B0-9%5D%7B2%7D)&replace=%241.%242%25>)](https://github.com/wagoodman/dive)
 [![GitHub Release](https://img.shields.io/github/v/release/rcwbr/mod-host-docker?logo=semver&style=flat-square)](https://github.com/rcwbr/mod-host-docker/releases/latest)
@@ -7,13 +7,15 @@
 [![Commitlint](https://img.shields.io/badge/commitlint-enabled-navy?style=flat-square&logo=commitlint)](https://github.com/conventional-changelog/commitlint)
 [![Conventional Commits](https://img.shields.io/badge/conventional_commits-compliant-pink?style=flat-square&logo=conventionalcommits&logoColor=white)](https://www.conventionalcommits.org)
 
-PLACEHOLDER: Project description.
+Docker image of the
+[MOD audio mod-host service](https://github.com/mod-audio/mod-host?tab=readme-ov-file).
 
 <!-- mdformat-toc start --slug=github --maxlevel=6 --minlevel=1 -->
 
-- [mod-host-docker](#new_project)
+- [mod-host-docker](#mod-host-docker)
   - [Overview](#overview)
   - [Usage](#usage)
+    - [Environment variables](#environment-variables)
   - [Contributing](#contributing)
     - [devcontainer](#devcontainer)
       - [devcontainer basic usage](#devcontainer-basic-usage)
@@ -26,11 +28,33 @@ PLACEHOLDER: Project description.
 
 ## Overview<a name="overview"></a>
 
-PLACEHOLDER: Brief overview of what the project does.
+Docker container image containing the
+[MOD audio mod-host service](https://github.com/mod-audio/mod-host?tab=readme-ov-file).
 
 ## Usage<a name="usage"></a>
 
-PLACEHOLDER: Add usage instructions using type-specific methods.
+To launch via docker compose:
+
+```yaml
+services:
+  mod-host:
+    image: ghcr.io/rcwbr/mod-host-docker:0.1.0
+    devices:
+      - /dev/snd:/dev/snd
+    cap_add:
+      - SYS_NICE
+      - SYS_RAWIO
+      - IPC_LOCK
+    privileged: true
+    shm_size: 700M
+    entrypoint: [/entrypoint]
+```
+
+### Environment variables<a name="environment-variables"></a>
+
+| Name         | Default value | Purpose                                                 |
+| ------------ | ------------- | ------------------------------------------------------- |
+| `JACKD_ARGS` | `-d dummy`    | Args applied to the `jackd` process via the entrypoint. |
 
 ## Contributing<a name="contributing"></a>
 
