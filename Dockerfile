@@ -1,7 +1,5 @@
 # hadolint ignore=DL3006
-FROM base_context
-
-FROM python:3.10.20 AS builder
+FROM base_context AS builder
 
 RUN apt-get update && apt-get install --no-install-recommends -y \
     lv2-dev=1.18.10* \
@@ -19,7 +17,7 @@ RUN --mount=type=bind,from=github-mod-host,target=.,rw \
     && make install
 
 
-FROM python:3.10.20 AS runtime
+FROM builder AS runtime
 
 RUN apt-get update && apt-get install --no-install-recommends -y \
     dbus-daemon=1.16.2* \
