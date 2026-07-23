@@ -38,7 +38,7 @@ To launch via docker compose:
 ```yaml
 services:
   mod-host:
-    image: ghcr.io/rcwbr/mod-host-docker:0.2.0
+    image: ghcr.io/rcwbr/mod-host-docker:0.2.1
     devices:
       - /dev/snd:/dev/snd
     cap_add:
